@@ -5,8 +5,6 @@ def is_palin(word):
         word_ += word[i - 1]
         invert += (word[(i - ( 2* i) )])
 
-    print(word_)
-    print(invert)
     if word_ == invert:
         return True
     else:
