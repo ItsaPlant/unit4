@@ -1,5 +1,5 @@
 def is_palin(word):
-    return True if word == word[::-1] else False
+    return word == word[::-1]
     
 check = is_palin("kajak")
 print(check)
