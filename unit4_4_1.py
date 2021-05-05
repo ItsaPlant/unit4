@@ -15,29 +15,8 @@ def calculator(x, y, action, z):
         score = x / y
     else:
         logging.debug("Proper action param needed!")
-    return score  
-
-def interface():
-    #collect initial input
-    logging.debug("Enter your data in following order: \n x, y, action_param \n AVILIABLE ACTION PARAMS: \n 1 for addition \n 2 for subtraction \n 3 for multiplication \n 4 for division")
-    x = input("type x value and hit ENTER: ")
-    y = input("type y value and hit ENTER: ")
-    action = input("type action_param and hit ENTER: ")
-    z = []
-    if action == 1 or 3:
-        my_bool = True
-        while my_bool == True:
-            z_ = input("If you want to add an extra value, type it and hit ENTER \n else hit ENTER: ")
-            if z_ is "":
-                break
-            else:
-                z.append(z_)
-    check(x, y, action, z)
-
-
     
-
-
+    return score
 
 
 def check(x, y, action, z):
@@ -63,8 +42,7 @@ def check(x, y, action, z):
     z_float = []
     for num in z:
         if float(num):
-            float(num)
-            z_float.append(z)
+            z_float.append(float(num))
         else:
             logging.debug("all values must be numbers")
             interface()
@@ -73,6 +51,25 @@ def check(x, y, action, z):
     value = calculator(x, y, action, z_float)
     print(value)
 
+def interface():
+    #collect initial input
+    logging.debug("Enter your data in following order: \n x, y, action_param \n AVILIABLE ACTION PARAMS: \n 1 for addition \n 2 for subtraction \n 3 for multiplication \n 4 for division")
+    x = input("type x value and hit ENTER: ")
+    y = input("type y value and hit ENTER: ")
+    action = input("type action_param and hit ENTER: ")
+    z = []
+    if action == 1 or 3:
+        my_bool = True
+        while my_bool == True:
+            z_ = input(" IF you want to add an EXTRA VALUE, type it and hit ENTER \n ELSE HIT ENTER ENTER: ")
+            if z_ is "":
+                break
+            else:
+                z.append(z_)
+    check(x, y, action, z)
+
+
+    
 interface()
 
 #logging.debug(f"program param is {sys.argv[1:]}")
