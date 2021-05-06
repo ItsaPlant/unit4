@@ -16,8 +16,7 @@ def calculator(x, y, action, z):
     else:
         logging.debug("Proper action param needed!")
     
-    return score
-
+    return score ####################################################### it does not work
 
 def check(x, y, action, z):
     #check initial input
@@ -58,7 +57,7 @@ def interface():
     y = input("type y value and hit ENTER: ")
     action = input("type action_param and hit ENTER: ")
     z = []
-    if action == 1 or 3:
+    if action == 1 or 3:  ##################### it does not work
         my_bool = True
         while my_bool == True:
             z_ = input(" IF you want to add an EXTRA VALUE, type it and hit ENTER \n ELSE HIT ENTER ENTER: ")
@@ -66,6 +65,9 @@ def interface():
                 break
             else:
                 z.append(z_)
+    else:
+        pass
+    
     check(x, y, action, z)
 
 
